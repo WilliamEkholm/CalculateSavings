@@ -47,7 +47,7 @@ public class Main {
         }
 
     public static double calcFutureValue(int monthlyInvestment, double annualInterestRate, int months){
-        double monthlyInterestRate = (annualInterestRate/100)/12;
+        double monthlyInterestRate = Math.pow(1 + annualInterestRate/100, 1.0 / 12) - 1;
         return monthlyInvestment * (Math.pow(1 + monthlyInterestRate, months) - 1)/monthlyInterestRate;
     }
 
